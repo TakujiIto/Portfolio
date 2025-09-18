@@ -206,7 +206,7 @@ header {
   pointer-events: none;
 }
 
-/*! ビューボタン               */
+/*! ビューボタン */
 .view-icon {
   position: fixed;
   bottom: 15px;
@@ -298,8 +298,6 @@ header {
 .section {
   padding: 400px 0;
 }
-
-
 
 /*! シャドウレイヤー*/
 .shadow-layer {
@@ -532,7 +530,7 @@ header {
   /* letter-spacingと同じ値をマイナス */
 }
 
-/*! ABOUT                    */
+/*! ABOUT セクション*/
 .about-wrapper {
   margin: 0 auto;
   width: 100%;
@@ -647,7 +645,7 @@ header {
   display: none;
 }
 
-/*  ★★★★★  WORKセクション ★★★★★*/
+/*  WORKセクション */
 .work-wrapper {
   margin: 200px auto 0 auto;
   width: 90%;
