@@ -904,7 +904,7 @@ header {
   font-size: 1.1rem;
 
   width: 90%;
-    line-height: 1.8;
+  line-height: 1.8;
   letter-spacing: 0.05rem;
 }
 
@@ -1126,7 +1126,7 @@ header {
 #name-slash {
   font-size: 2.6rem;
   font-family: "Noto Serif JP", serif;
-    color: white;
+  color: white;
 }
 
 #name-jp {
@@ -1367,6 +1367,7 @@ header {
   width: 100%;
   height: 100vh;
   position: relative;
+  border: 1px solid transparent;
 }
 
 .end-wrapper::after {
@@ -1394,7 +1395,8 @@ header {
 
 
 #background-layer-6 {
-  filter: brightness(0.9); /* 1.0が通常、0.8で少し暗くなる */
+  filter: brightness(0.9);
+  /* 1.0が通常、0.8で少し暗くなる */
 }
 
 #canvas-container {
