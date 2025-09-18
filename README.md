@@ -1,5 +1,3 @@
-# 伊藤卓爾 Webポートフォリオ
-
-# 概要
+伊藤卓爾 Webポートフォリオ
 HTML/CSS/JavaScript(jquery)を使用して制作したWebポートフォリオです。
 
