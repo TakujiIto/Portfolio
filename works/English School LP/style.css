@@ -1,0 +1,563 @@
+@charset "UTF-8";
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: #333;
+  font-family: "游ゴシック体", "YuGothic", "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  letter-spacing: 0.1em;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+/*コンテンツ幅*/
+.wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+#header {
+  height: 100px;
+}
+
+.header-logo {
+  width: 100px;
+  margin: 40px;
+
+}
+
+.header-logo a {
+  display: block;
+}
+
+
+/*トグルBTN*/
+.hamburger-btn {
+  height: 100px;
+  width: 100px;
+  background: #ff2a2a;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transition: all 0.4s;
+  z-index: 30;
+  cursor: pointer;
+}
+
+.hamburger-btn:hover {
+  opacity: .6;
+}
+
+/*3本線*/
+.hamburger-btn span {
+  background-color: #fff;
+  width: 50%;
+  height: 2px;
+  left: 25%;
+  position: absolute;
+  transition: 0.3s;
+}
+
+.hamburger-btn span:nth-child(1) {
+  top: 34%;
+}
+
+.hamburger-btn span:nth-child(2) {
+  top: 50%;
+}
+
+.hamburger-btn span:nth-child(3) {
+  top: 66%;
+}
+
+/*アクティブ 3本線を×にする*/
+.active span:nth-child(1) {
+  top: 47%;
+  transform: rotate(-45deg);
+}
+
+/* 2本目と3本目は重ねて45度回転 */
+.active span:nth-child(2),
+.active span:nth-child(3) {
+  top: 47%;
+  background: #fff;
+  transform: rotate(45deg);
+}
+
+
+/*非アクティブ側を全画面*/
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 10;
+  width: 100%;
+  background-color: #ff2a2a;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  visibility: hidden;
+}
+
+nav.active {
+  opacity: 1;
+  visibility: visible
+}
+
+nav ul {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+nav li {
+  margin-bottom: 25px;
+}
+
+nav a {
+  font-size: 1.2rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+nav .btn {
+  position: relative;
+  display: block;
+  margin: auto;
+  padding: 15px 0;
+  border: 1px solid #fff;
+  width: 250px;
+  transition:all 0.3s;
+}
+
+nav .btn::after {
+  content: "\00a0";
+  /*全角スペース*/
+  width: 250px;
+  padding: 15px 0px;
+  border-right: #fff 1px solid;
+  border-bottom: #fff 1px solid;
+  bottom: -5px;
+  right: -5px;
+  position: absolute;
+}
+
+nav .btn:hover {
+  background-color: #fff;
+  color: #ff2a2a;
+}
+
+
+/*#メインビジュアル--------------------------*/
+#mv {
+  position: relative;
+  height: 720px;
+  margin-bottom: 120px;
+}
+
+.fade-image img {
+  width: 100%;
+  height: 720px;
+  object-fit: cover;
+}
+
+.fade-image li {
+  position: absolute;
+  width: 75%;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  animation: fade 15s infinite;
+}
+
+.fade-image li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0px 0px 20px 20px #fff;
+}
+
+/*15秒中での画像表示の移行*/
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  15%,
+  30% {
+    opacity: 1;
+  }
+
+  45%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/*3枚あるのでスタートを5秒ずつずらす*/
+.fade-image li:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.fade-image li:nth-child(2) {
+  animation-delay: 5s;
+}
+
+.fade-image li:nth-child(3) {
+  animation-delay: 10s;
+}
+
+.mv-text {
+  position: absolute;
+  top: 280px;
+  left: 10%;
+  z-index: 1;
+}
+
+.mv-text p {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 0px 0px 6px white,
+  2px 2px 6px white;
+}
+
+/*MVボタン*/
+.mv-btn {
+  text-align: center;
+  font-size: 1.5rem;
+  display: block;
+  background-color: #ff2a2a;
+  border-bottom: 6px solid #9a0413;
+  color: #fff;
+  padding: 15px 60px;
+  border-radius: 10px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.mv-btn:hover {
+  transform: scale(107%);
+}
+
+/*疑似要素は基本absoluteで作成*/
+.mv-btn:after {
+  position: absolute;
+  right: 40px;
+  top: 40%;
+  content: "";
+  width: 13px;
+  height: 13px;
+  border-bottom: #fff 3px solid;
+  border-right: #fff 3px solid;
+  transform: rotate(-45deg);
+}
+
+
+/*BBCが選ばれる理由--------------------*/
+#lesson {
+  margin-bottom: 120px;
+  overflow: hidden;
+}
+
+/*セクションタイトル*/
+.sec-title {
+  text-align: center;
+  font-size: 2.5rem;
+  position: relative;
+  margin-bottom: 100px;
+}
+
+.sec-title::after {
+  content: "";
+  position: absolute;
+  width: 120px;
+  height: 3px;
+  background: #333;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.bg {
+  background-color: #ff2a2a;
+  padding: 80px 0;
+}
+
+/*スライド共通―――――――――――――*/
+.slide {
+  display: flex;
+  background-color: #fff;
+  width: 50%;
+  padding: 5%;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+/* inviewでクラス付与*/
+.slide-left {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  animation: slide-left .6s ease-out forwards;
+}
+
+.slide-right {
+  margin-top: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  animation: slide-right .6s ease-out forwards;
+}
+
+.slide img {
+  height: 80px;
+  margin-right: 30px;
+}
+
+.slide .title {
+  display: block;
+  color: #ff2a2a;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.slide .text {
+  display: block;
+  font-size: 1.5rem;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(150%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+/*受講生の声-------------------*/
+#voice {
+  margin-bottom: 120px;
+}
+
+.item-left {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+  opacity: 0;
+}
+
+.item-right {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 50px;
+  opacity: 0;
+}
+
+.student {
+  text-align: center;
+}
+
+.student .icon {
+  background-color: #ddd;
+  border-radius: 50%;
+  height: 120px;
+  margin-bottom: 12px;
+}
+
+.student p {
+  line-height: 1.2rem;
+}
+
+.comment-left,
+.comment-right {
+  line-height: 1.3;
+  height: 80%;
+  width: 60%;
+  background-color: #add8e6;
+  padding: 30px;
+  border-radius: 10px;
+  position: relative;
+  margin: 0 30px;
+}
+
+
+/*三角*/
+.comment-left::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  right: 100%;
+  border: 15px solid transparent;
+  border-right: 15px solid #add8e6;
+}
+
+.comment-right::after {
+  content: "";
+  position: absolute;
+  top: 60%;
+  left: 100%;
+  border: 15px solid transparent;
+  border-left: 15px solid #add8e6;
+}
+
+.zoom {
+  animation: zoomIn 1s ease-out 0s forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*ループ背景*/
+#school {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  margin-bottom: 120px;
+  background: url(img/bg.gif) repeat;
+  background-size: 700px;
+  animation: fall 10s infinite linear;
+}
+
+@keyframes fall {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: -700px 700px;
+  }
+}
+
+.school-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.school-menu li {
+  margin-bottom: 35px;
+  text-align: center;
+  width: 48%;
+  background-color: #fff;
+  padding: 60px;
+  border-radius: 20px;
+}
+
+.menu-ja {
+  font-size: 2rem;
+
+}
+
+.menu-ea {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.school-menu li p {
+  text-align: left;
+  line-height: 1.5rem;
+}
+
+/*まずは無料でｰｰｰｰｰｰｰｰｰｰｰｰｰｰｰ*/
+#entry {
+  margin-bottom: 120px;
+  text-align: center;
+}
+
+#entry h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;}
+
+#entry .btn {
+  font-size: 1.5rem;
+  display: block;
+  margin-top: 40px;
+  background-color: #ff2a2a;
+  border: #ff2a2a 4px solid;
+  color: #fff;
+  padding: 10px;
+  border-radius: 30px;
+  transition: all 0.5s;
+}
+
+#entry .btn:hover {
+  background-color: #fff;
+  color: #ff2a2a;
+}
+
+/*footer------------*/
+#footer {
+  padding: 20px 0;
+  background-color: #e7e7e7;
+}
+
+#footer .inner {
+  padding: 40px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+#footer .inner p {
+  font-weight: bold;
+}
+
+#footer .menu {
+  padding: 10px;
+  width: 25%;
+}
+
+#footer .menu li {
+  font-size: 0.9rem;
+}
+
+#footer .menu ul {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+#footer .copy {
+  text-align: center;
+  font-size: 0.75rem;
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Cofe Shop Menu</title>
+  <meta name="description" content="テキストテキスト">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!--JQuery-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="main.js"></script> 
+</head>
+
+<body>
+
+<header id="header"> <!--relative-->
+  <nav> <!--flex end-->
+   <ul>
+    <li><a  class="scroll-btn"  href="#menu">MENU</a></li>
+    <li><a  class="scroll-btn"  href="#about">ABOUT</a></li>
+    <li><a  class="scroll-btn"  href="#location">LOCATION</a></li>
+  </ul>
+ </nav>
+
+<h1 class="site-title"> 
+  <img src="img/logo.svg" alt="">
+</h1>
+</header>
+
+<main>
+
+  <!--MENU----------------------------------------->
+  <section id="menu">
+    <div class="menu sec-image"> <!--背景あり relative-->
+      <h2 class="sec-title">MENU</h2>
+    </div>
+
+  
+    <div class="flex wrapper"><!--flex-->
+      
+       <!--左側-->
+      <div class="menu-item">
+        <h3 class="item-title">COFFEE</h3> <!--★見出し-->
+        <dl class="wrap-dl">
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+                    <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+        </dl>
+      </div>
+
+      <!--右側-->
+      <div class="menu-item">
+        <h3 class="item-title">FOOD</h3>
+        <dl class="wrap-dl food">
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+                    <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+     
+        </dl>
+
+        <h3 class="item-title">OTHER</h3>
+        <dl class="wrap-dl">
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+          <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+                    <dt>XXXX</dt>
+          <dd>&yen;500</dd>
+
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <!--ABOUT----------------------------------------->
+  <section id="about">
+    <div class="about sec-image"> <!--背景 relative-->
+      <h2 class="sec-title">ABOUT</h2>
+    </div>
+
+    <div class="wrapper">
+      <h3 class="item-title">COFFEE</h3> <!--★見出し-->
+
+      <ul class="wrap-text">
+        <li>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテトテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテト</li>
+        <li>テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテトテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテト</li>
+        <li>テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテトテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテト</li>
+        <li>テキストテキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテトテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテト</li>
+      </ul>
+      <a href="#" class="btn">READ MORE</a>
+    </div>
+
+
+  </section>
+
+
+    <!--LOCATION------------------------------------->
+    <section id="location">
+      <div class="location sec-image"> <!--背景あり relative-->
+        <h2 class="sec-title">LOCATION</h2>
+      </div>
+
+      <div class="wrapper">
+        <h3 class="item-title">OUR STORE</h3> <!--★見出し-->
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3250.391781877691!2d139.6334538256238!3d35.44509397266435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60185cf172c054bd%3A0x7d2d83e99cde9671!2z6Zai5YaF6aeF!5e0!3m2!1sja!2sjp!4v1732847000601!5m2!1sja!2sjp" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="info">
+          <p>X-XX-XX, Ebisuminami, Shibuya-ku, Tokyo 150-0022<br>
+            東京都渋谷区恵比寿南X-XX-XX</p>
+            <p>Open 7 days a Week<br>
+              9:00am to 10:00pm</p>
+        </div>
+
+      </div>
+    </section>
+
+
+</main>
+
+<footer class="wrapper" id="footer">
+  <p class="copy">&copy;COFFEE</p>
+</footer>
+</body>
+</html>

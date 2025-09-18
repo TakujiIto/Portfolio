@@ -1,0 +1,352 @@
+@charset "UTF-8";
+
+body {
+  font-family: "Helvetica Neue", "Arial", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1000px;
+  padding: 60px 16px 60px 16px;
+  margin: 0 auto;
+  /*全見出しを中央*/
+  text-align: center;
+}
+
+/*header------*/
+#header {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(img/mainvisual.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+/*サイトロゴ*/
+.site-title {
+  position: absolute;
+  width: 100%;
+  top: 45%;
+  left: 0;
+  right: 0;
+  /*left0 right0 でcenterが効く*/
+  text-align: center;
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+#header ul {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px 30px;
+}
+
+
+#header a {
+  color: #fff;
+   margin: 20px;
+  font-size: 1.4rem;
+  text-shadow: 2px 2px 4px #000;
+}
+
+#header a:hover {
+  text-shadow: 2px 2px 4px #fff;
+}
+
+
+/*★セクション背景写真 固定*/
+.sec-image {
+  height: 300px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/*★セクションタイトルロゴ*/
+.sec-title {
+  color: #fff;
+  position: absolute;
+  font-size: 4.6rem;
+  top: 30%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.8));
+}
+
+
+
+/*MENU-------------------*/
+.menu {
+  background-image: url(img/menu.jpg);
+
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.menu-item {
+  width: 50%;
+  padding: 0 4%;
+
+}
+
+/*メニューの右側ボーダー*/
+.menu-item:first-child {
+  border-right: 1px solid #333;
+
+}
+
+/*★見出し*/
+.item-title {
+  color: #333;
+  display: inline-block;
+  font-size: 2.2rem;
+  border-bottom: 4px solid crimson;
+  margin-bottom: 40px;
+
+
+}
+
+.wrap-dl {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+/*リスト左*/
+.wrap-dl dt {
+  display: inline-block;
+  width: 80%;
+  text-align: left;
+  border-bottom: 1px dotted;
+  margin-bottom: 26px;
+  font-size: 0.8rem;
+}
+
+/*リスト右 値段*/
+.wrap-dl dd {
+  width: 15%;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.food {
+  margin-bottom: 48px;
+}
+
+/*ABOUT----------------------*/
+.about {
+  background-image: url(img/about.jpg);
+}
+
+.wrap-text {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.wrap-text li {
+  width: 50%;
+  padding: 30px 20px;
+  text-align: left;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/*１ ボタンにpadで領域を作り、基準点に*/
+.btn {
+  position: relative;
+  color: #333;
+  display: inline-block;
+  padding: 20px 60px;
+}
+
+
+/*２ beforeとafterを用いて
+     透明なボックスを作る*/
+.btn::before,
+.btn::after {
+  position: absolute;
+  width: 20%;
+  height: 50%;
+  content: '';
+
+}
+
+/*３ 上記にそれぞれボーダーをかけ、「」っぽく見せる。
+     transitionはここに設定する*/
+.btn::before {
+  top: 0;
+  left: 0;
+  border-left: 3px solid crimson;
+  border-top: 3px solid crimson;
+  transition: all 0.3s ease;
+}
+
+.btn::after {
+  bottom: 0;
+  right: 0;
+  border-right: 3px solid crimson;
+  border-bottom: 3px solid crimson;
+  transition: all 0.3s ease;
+}
+
+/*４ 上記のホバー時の変更を作る*/
+.btn:hover::before,
+.btn:hover::after {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  content: '';
+}
+
+
+/*LOCATION---------------------*/
+.location {
+  background-image: url(img/location.jpg);
+}
+
+.map {
+  margin-top: 20px;
+  filter: grayscale(1);
+  margin-bottom: 40px;
+}
+
+.info {
+  text-align: left;
+}
+
+.info p {
+  margin-bottom: 10px;
+}
+
+/*footer---------------------*/
+
+#footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.copy {
+  font-size: 0.75rem;
+  margin: auto;
+
+}
+
+.top-btn {
+  color: #555;
+  font-size: 0.8rem;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #ddd;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .site-title {
+    width: 70%;
+    top: 40%;
+    margin: 0 auto;
+  }
+
+  #header ul {
+  padding: 20px 30px;
+}
+
+  #header a {
+  color: #fff;
+
+  font-size: 1rem;
+
+}
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+
+  .menu-item:first-child {
+    border-right: none;
+  }
+
+  .wrap-text {
+    flex-direction: column;
+ 
+  }
+
+  #about li {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .sec-image {
+    height: 150px;
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+
+  }
+
+  .sec-title {
+    color: #fff;
+    position: absolute;
+    font-size: 2.4rem;
+    top: 31%;
+    left: 0;
+    right: 0;
+    /*left0 right0 でcenterが効く*/
+    text-align: center;
+    filter: drop-shadow(2px 2px 5px #000);
+  }
+
+  .item-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    border-bottom: 3px solid crimson;
+    line-height: 1.4;
+
+  }
+
+  .wrap-dl {
+    margin-bottom: 40px;
+  }
+
+
+  .wrap-text li {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.4;
+  }
+
+
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <title>English School LP</title>
+  <meta name="description" content="テキストテキスト">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--ファビコン-->
+  <link rel="icon" href="img/favicon.ico">
+  <!--リセットCSSとCSSファイルを読込-->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <!--JQueryとjsファイルを読込-->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/jquery-inview@1.1.2/jquery.inview.min.js "></script>
+  <script src="main.js"></script>
+</head>
+
+<body>
+
+  <header id="header">
+    <h1 class="header-logo">
+      <a href="index.html">
+        <img src="img/logo-r.svg" alt="">
+      </a>
+    </h1>
+    <nav> 
+      <h1 class="header-logo">
+        <img src="img/logo-w.svg" alt="">
+      </h1>
+      <ul>
+        <li><a href="#lesson">BBCが選ばれる理由</a></li>
+        <li><a href="#voice">受講生の声</a></li>
+        <li><a href="#school">スクールの概要</a></li>
+      </ul>
+      <a class="btn" href="#">無料体験に申し込む</a>
+    </nav>
+    <div class="hamburger-btn"><!--ボタン-->
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <main>
+    <!--メイン画像------------------------------->
+    <div id="mv"> <!--relative-->
+      <div class="mv-text">
+        <p>話して学ぼう！<br>BBC英会話スクール</p>
+        <a href="#" class="mv-btn">無料体験会はこちら</a>
+      </div>
+      <ul class="fade-image">
+        <li><img src="img/mainvisual1.jpg" alt=""></li>
+        <li><img src="img/mainvisual2.jpg" alt=""></li>
+        <li><img src="img/mainvisual3.jpg" alt=""></li>
+      </ul>
+    </div>
+
+    <!--BBC----------------------------------->
+    <section id="lesson">
+      <h2 class="sec-title">BBCが選ばれる理由</h2>
+      <div class="bg">
+
+        <div class="slide inview-slide-left"> <!--inView +slide-left-->
+          <img src="img/icon-pc.png" alt="">
+          <p>
+            <span class="title">オンライン対応</span>
+            <span class="text">24時間いつでも受講できる！</span>
+          </p>
+        </div>
+
+        <div class="slide inview-slide-right"> <!--inView +slide-right-->
+          <img src="img/icon-teacher.png" alt="">
+          <p>
+            <span class="title">講師はネイティブ</span>
+            <span class="text">お気に入りの講師が自由に選べる！</span>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!--受講生の声--------------------------->
+    <section id="voice" class="wrapper">
+      <h2 class="sec-title">受講生の声</h2>
+
+      <div class="item-left item-inview"><!--flex左寄せ +zoom-->
+        <div class="student">
+          <img class="icon" src="img/icon-student1.png" alt="">
+          <p>〇〇〇さん<br>大学生</p>
+        </div>
+        <p class="comment-left">
+          テキストテキストテキストテキストテキストテキストテキストテキスト<br>
+          テキストテキストテキストテキストテキストテキストテキストテキスト
+        </p>
+      </div>
+
+      <div class="item-right item-inview"><!--flex 右寄せ-->
+        <p class="comment-right">
+          テキストテキストテキストテキストテキストテキストテキストテキスト<br>
+          テキストテキストテキストテキストテキストテキストテキストテキスト
+        </p>
+        <div class="student">
+          <img class="icon" src="img/icon-student2.png" alt="">
+          <p>〇〇〇さん<br>会社員</p>
+        </div>
+      </div>
+
+      <div class="item-left item-inview"><!--flex 左寄せ-->
+        <div class="student">
+          <img class="icon" src="img/icon-student3.png" alt="">
+          <p>〇〇〇さん<br>自営業</p>
+        </div>
+        <p class="comment-left">
+          テキストテキストテキストテキストテキストテキストテキストテキスト<br>
+          テキストテキストテキストテキストテキストテキストテキストテキスト
+        </p>
+      </div>
+    </section>
+
+    <!--スクールの概要------------------------------>
+    <section id="school">
+      <div class="wrapper">
+
+        <h2 class="sec-title">スクール概要</h2>
+        <ul class="school-menu"><!--wrap-->
+
+          <li>
+            <h3 class="menu-ja">レッスン内容</h3>
+            <h3 class="menu-ea">LESSON</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキストテキスト
+              テキストテキストテキストテキスト</p>
+          </li>
+
+          <li>
+            <h3 class="menu-ja">レッスン内容</h3>
+            <h3 class="menu-ea">LESSON</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキストテキスト
+              テキストテキストテキストテキスト</p>
+          </li>
+
+          <li>
+            <h3 class="menu-ja">レッスン内容</h3>
+            <h3 class="menu-ea">LESSON</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキストテキスト
+              テキストテキストテキストテキスト</p>
+          </li>
+
+          <li>
+            <h3 class="menu-ja">レッスン内容</h3>
+            <h3 class="menu-ea">LESSON</h3>
+            <p>テキストテキストテキストテキストテキストテキストテキストテキスト
+              テキストテキストテキストテキスト</p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!--申し込み---------------------------->
+    <section id="entry" class="wrapper">
+      <h2>まずは無料で、BBCの英会話を試してみませんか？</h2>
+      <p>今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
+      <a class="btn" href="#">無料体験に申し込む</a>
+    </section>
+
+  </main>
+
+  <footer id="footer">
+    <ul class="inner wrapper">
+      <li class="menu">
+        <p>コース一覧</p>
+        <ul>
+          <li>スタンダードプラン</li>
+          <li>プレミアムプラン</li>
+          <li>短期集中プラン</li>
+          <li>日常英会話コース</li>
+          <li>ビジネス英会話コース</li>
+        </ul>
+      </li>
+      <li class="menu">
+        <p>講師紹介</p>
+        <ul>
+          <li>講師について</li>
+          <li>講師一覧</li>
+          <li>短期集中プラン</li>
+        </ul>
+      </li>
+      <li class="menu">
+        <p>会社情報</p>
+        <ul>
+          <li>会社概要</li>
+          <li>採用情報</li>
+        </ul>
+      </li>
+      <li class="menu">
+        <p>BBCについて</p>
+        <ul>
+          <li>よくあるご質問</li>
+          <li>ご利用規約</li>
+          <li>プライバシーポリシー</li>
+          <li>お問い合わせ</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p class="copy">&copy;BBB English School</p>
+  </footer>
+</body>
+
+</html>

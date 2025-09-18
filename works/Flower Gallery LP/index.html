@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Flower Gallery LP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="テキストテキスト" />
+  <!--favicon-->
+  <link rel="icon" href="img/favicon.ico"/>
+  <!--リセットCSS-->
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+
+  <!--google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@200..900&display=swap" rel="stylesheet">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!--jQuery CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/jquery-inview@1.1.2/jquery.inview.min.js "></script>
+  <!--INVEW CDN-->
+  <script src=" https://cdn.jsdelivr.net/npm/jquery-inview@1.1.2/jquery.inview.min.js "></script>
+  <!--SLICK CDN-->
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <!--JS-->
+  <script src="js/main.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="#"><img src="img/logo.svg" alt=""></a>
+    </div>
+    <nav id="navi">
+      <ul class="menu">
+        <li><a href="#">TOP</a></li>
+        <li><a href="#information">INFORMATION</a></li>
+        <li><a href="#gallery">GALLERY</a></li>
+        <li><a href="#access">ACCESS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </nav>
+    <button id="toggle-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main>
+    <!--メイン画像-->
+    <div id="hero"> <!--flex-->
+      <img src="img/mainvisual1.jpg" alt="">
+      <img src="img/mainvisual2.jpg" alt="">
+      <img src="img/mainvisual3.jpg" alt="">
+    </div>
+
+    <h2 class="title fadein">Hello Flower! <br>
+      FA EXHIBITION 2021</h2>
+
+    <section id="information" class="wrapper fadein">
+      <h2 class="sec-title">INFORMATION</h2>
+      <p class="info-time">2021 JUL 1(THU)-3(SAT) <br> DAY1 10am-6pm OTHER 10am-5:30pm</p>
+      <p class="info-title">at PARK SIDE HALL</p>
+      <p class="info-time">2021年7月1日(木)ー3日(土) <br>
+        Day1 10時〜18時　その他 10時〜17時30分</p>
+    </section>
+
+    <section id="gallery" class="wrapper">
+      <h2 class="sec-title fadein">GALLERY</h2>
+      <ul class="gallery-list">
+        <li class="fadein"><img src="img/flower1.jpg" alt=""></li>
+        <li class="fadein"><img src="img/flower2.jpg" alt=""></li>
+        <li class="fadein"><img src="img/flower3.jpg" alt=""></li>
+        <li class="fadein"><img src="img/flower4.jpg" alt=""></li>
+        <li class="fadein"><img src="img/flower5.jpg" alt=""></li>
+        <li class="fadein"><img src="img/flower6.jpg" alt=""></li>
+      </ul>
+    </section>
+
+    <!-- アクセス 背景付き -->
+    <section id="access" class="wrapper">
+      <h2 class="sec-title">ACCESS</h2>
+      <p class="access-title">PARK SIDE HALL</p>
+      <p class="access-text">〒152-0035<span>東京都目黒区自由が丘</span>1-1-1 PARK SIDE HALL<br>
+        PARK SIDE HALL, 1-1-1 Jiyugaoka, Meguro-ku, Tokyo</p>
+      <p class="access-text">Tel: 03-1111-1111<br>
+        E-mail: info@xxxxxxx.jp</p>
+      <a href="" id="map-btn">GOOGLE MAP</a>
+    </section>
+
+    <section id="contact" class="wrapper">
+      <h2 class="sec-title">CONTACT</h2>
+      <a class="contact-btn" href="#">出展に関するお問い合わせ</a>
+      <a class="contact-btn" href="#">その他のお問い合わせ</a>
+    </section>
+
+    <!--?サイドボタン (gallery~accessまで)-->
+    <div id="side-btn">
+      <a href="#">FOR VISITOR</a>
+      <a href="#">FOR EXHIBITOR</a>
+    </div>
+
+
+    <!--背景-->
+    <div class="bg"></div>
+
+    <!--SCROLL位置確認用-->
+    <div id="position-date">
+      <p id="scroll-position-date"></p>
+      <p id="window-height-date"></p>
+      <p id="now-position-date"></p>
+      <p id="content-position-date1"></p>
+      <p id="content-position-date2"></p>
+    </div>
+  </main>
+
+  <footer id="footer">
+    <div>
+      <p>FA EXHIBITION</p>
+      <p>〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL</p>
+      <p class="contact">
+        Tel: 03-1111-1111<br>
+        E-mail: info@xxxxxxx.jp
+      </p>
+    </div>
+
+    <div class="footer-contents"> <!--flex-->
+      <ul class="sns">
+        <li><a href="#" target="_blank">Twitter</a></li>
+        <li><a href="#" target="_blank">Facebook</a></li>
+        <li><a href="#" target="_blank">Instagram</a></li>
+      </ul>
+      <ul class="copyright">
+        <li><a href="#">PRIVACY POLICY</a></li>
+        <li>&copy; FA EXHIBITION</li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+
+</html>

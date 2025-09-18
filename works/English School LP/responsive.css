@@ -1,0 +1,199 @@
+@media screen and (max-width:900px) {
+
+
+  #header {
+    height: 80px;
+  }
+
+  .header-logo {
+    margin: 20px;
+    width: 80px;
+  }
+
+  .wrapper {
+    padding: 0 20px;
+  }
+
+  .hamburger-btn {
+    height: 80px;
+    width: 80px;
+  }
+
+  #mv {
+    position: relative;
+    margin-bottom: 0px;
+    height: 600px;
+  }
+
+  .fade-image img {
+    height: 300px;
+  }
+
+  .fade-image li {
+    width: 100%;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    animation: fade 15s infinite;
+    /* 3枚を 15秒で1サイクル 無限ループ */
+  }
+
+  .mv-text {
+    position: absolute;
+    width: calc(100% - 32px);
+    top: 310px;
+    left: 16px;
+
+  }
+
+  .mv-text p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
+  .mv-btn {
+    width: 95%;
+    margin: auto;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+  }
+
+
+
+  .sec-title {
+    font-size: 1.5rem;
+    margin-bottom: 60px;
+  }
+
+  .sec-title::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 3px;
+  }
+
+  #lesson {
+    margin-bottom: 80px;
+    overflow: hidden;
+  }
+
+  /*スライド部---------------*/
+  .bg {
+    padding: 30px 0;
+  }
+
+  .slide {
+    width: 90%;
+  }
+
+  .slide .title {
+    font-size: 1.2rem;
+  }
+
+  .slide .text {
+    font-size: 1rem;
+  }
+
+  .slide-right {
+    margin-top: 30px
+  }
+
+  @keyframes slide-right {
+    0% {
+      transform: translateX(62%);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(12%);
+    }
+  }
+
+  /*受講生の声-----------------------*/
+  .item-left {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .item-right {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .student .icon {
+    height: 100px;
+  }
+
+  .comment-left,
+  .comment-right {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+
+  .comment-left::after {
+    width: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 100%;
+    border: 15px solid transparent;
+    border-top: 15px solid #add8e6;
+  }
+
+  .comment-right::after {
+    width: 0px;
+
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 100%;
+    border: 15px solid transparent;
+    border-top: 15px solid #add8e6;
+  }
+
+
+
+
+  /*スクール概要-------------------------*/
+  #school {
+    padding: 40px 0;
+  }
+
+  .school-menu li {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .menu-ja {
+    font-size: 1.3rem;
+
+  }
+
+  .menu-ea {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+
+  #entry h2 {
+    font-size: 1.5rem;
+  }
+
+  #footer .inner {
+    flex-wrap: wrap;
+  }
+
+  #footer .menu {
+    width: 50%;
+  }
+
+
+
+
+
+}
