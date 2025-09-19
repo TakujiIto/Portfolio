@@ -537,7 +537,7 @@ header {
 .about-wrapper {
   margin: 0 auto;
   width: 100%;
-  height: 100dvh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   overflow-x: hidden;
@@ -666,7 +666,7 @@ header {
   width: 35%;
   position: fixed;
   height: 600px;
-  top: 100px;
+  top: 10%;
   left: 5%;
   z-index: 10;
   opacity: 0;
@@ -779,20 +779,17 @@ header {
   display: none;
 }
 
-
 /* MAKING ▼   //////////////////////////////////// */
 .making-wrapper {
   margin: 0 auto;
   width: 90%;
   position: relative;
   z-index: 100;
-  height: 100dvh;
+  min-height: 90dvh;
   display: flex;
   justify-content: center;
   padding-top: 80px;
 }
-
-
 
 /* 左側　高さは右と揃える */
 .making-left {
@@ -904,7 +901,7 @@ header {
   font-size: 1.1rem;
 
   width: 90%;
-    line-height: 1.8;
+  line-height: 1.8;
   letter-spacing: 0.05rem;
 }
 
@@ -927,7 +924,7 @@ header {
 .indicator {
   position: absolute;
   display: flex;
-  top: 700px;
+  bottom: 5%;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -1126,7 +1123,7 @@ header {
 #name-slash {
   font-size: 2.6rem;
   font-family: "Noto Serif JP", serif;
-    color: white;
+  color: white;
 }
 
 #name-jp {
@@ -1365,7 +1362,7 @@ header {
 
 .end-wrapper {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
 }
 
@@ -1387,14 +1384,19 @@ header {
 }
 
 .contact-btn-container {
+  position: absolute;
   width: fit-content;
   height: fit-content;
-  margin: 580px auto 0px auto;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 22%;
 }
 
 
 #background-layer-6 {
-  filter: brightness(0.9); /* 1.0が通常、0.8で少し暗くなる */
+  filter: brightness(0.9);
+  /* 1.0が通常、0.8で少し暗くなる */
 }
 
 #canvas-container {
@@ -1408,4 +1410,45 @@ header {
 #canvas-container.visible {
   opacity: 1;
   pointer-events: none
+}
+
+#bg-onview {
+  position: fixed;
+  width: fit-content;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.4s;
+}
+
+#bg-onview.visible{
+  opacity: 1;
+}
+
+
+#bg-onview p {
+   white-space: nowrap;
+  position: relative;
+  width: fit-content;
+  font-size: 1.4rem;
+  color: #44f3ff;
+  text-shadow:0px 0px 6px #1AB5CC;
+}
+
+#bg-onview p::before {
+  content: '';
+  position: absolute;
+  top: 55%;
+  /* 少し下にずらす */
+  left: 50%;
+  width: 500px;
+  height: 60px;
+  background: rgba(0, 0, 0, 1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  filter: blur(15px);
 }

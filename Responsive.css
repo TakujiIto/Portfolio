@@ -480,7 +480,7 @@
   }
 
   .box-btn {
-    width: 300px;
+    width: 260px;
   }
 
   .box-btn-title {
@@ -491,7 +491,7 @@
   }
 
   .box-btn-title::after {
-    width: 260px;
+    width: 220px;
   }
 
   .box-btn-text {
@@ -638,11 +638,35 @@
   }
 
   .contact-btn-container {
-    margin: 0 auto;
+
+    bottom: 50%;
+    transform: translateY(50%);
   }
 
   #canvas-container {
     width: 600px;
   }
+
+  #bg-onview p {
+
+    font-size: 0.9rem;
+
+  }
+
+  #bg-onview p::before {
+    content: '';
+    position: absolute;
+    top: 55%;
+    /* 少し下にずらす */
+    left: 50%;
+    width: 300px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    filter: blur(15px);
+  }
+
 
 }

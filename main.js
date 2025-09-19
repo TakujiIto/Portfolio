@@ -21,18 +21,19 @@ $(function () {
 
 
   // ビューボタンで全画面非表示
-  $('.view-btn, .sp-view-btn').on('click', function (e) {
-    e.stopPropagation();
-    $('#header, #main, #footer').addClass('overlay-hidden');
-    $(document).one('click', function () {
-      $('#header, #main, #footer').removeClass('overlay-hidden');
-    });
+ $('.view-btn, .sp-view-btn').on('click', function (e) {
+  e.stopPropagation();
+
+  // ヘッダー・メイン・フッター非表示
+  $('#header, #main, #footer').addClass('overlay-hidden');
+  $('#bg-onview').addClass('visible');
+
+  // どこかクリックされたら元に戻す
+  $(document).one('click', function () {
+    $('#header, #main, #footer').removeClass('overlay-hidden');
+    $('#bg-onview').removeClass('visible');
   });
-  $('.view-btn').on('mouseenter', function () {
-    $('.star-icon').addClass('hovered');
-  }).on('mouseleave', function () {
-    $('.star-icon').removeClass('hovered');
-  });
+});
 
 
 
