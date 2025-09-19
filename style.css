@@ -206,7 +206,7 @@ header {
   pointer-events: none;
 }
 
-/*! ビューボタン */
+/*! ビューボタン               */
 .view-icon {
   position: fixed;
   bottom: 15px;
@@ -294,12 +294,14 @@ header {
   transition: opacity 0.4s;
 }
 
-/*! セクション共通 */
+/*! セクション   共通  ★★★                               */
 .section {
   padding: 400px 0;
 }
 
-/*! シャドウレイヤー*/
+
+
+/*! シャドウレイヤー (wrapperに入ったら)*/
 .shadow-layer {
   position: fixed;
   top: 50%;
@@ -470,6 +472,7 @@ header {
   }
 }
 
+
 /* タイポ背景 */
 .title-bg {
   width: 100%;
@@ -530,7 +533,7 @@ header {
   /* letter-spacingと同じ値をマイナス */
 }
 
-/*! ABOUT セクション*/
+/*! ABOUT                    */
 .about-wrapper {
   margin: 0 auto;
   width: 100%;
@@ -538,7 +541,6 @@ header {
   display: flex;
   align-items: center;
   overflow-x: hidden;
-  margin-bottom: 200px;
 }
 
 .about-container {
@@ -645,9 +647,9 @@ header {
   display: none;
 }
 
-/*  WORKセクション */
+/*  ★★★★★  WORKセクション ★★★★★*/
 .work-wrapper {
-  margin: 200px auto 0 auto;
+  margin: 0 auto;
   width: 90%;
   position: relative;
   z-index: 100;
@@ -778,7 +780,7 @@ header {
 }
 
 
-/* MAKING セクション*/
+/* MAKING ▼   //////////////////////////////////// */
 .making-wrapper {
   margin: 0 auto;
   width: 90%;
@@ -1365,7 +1367,6 @@ header {
   width: 100%;
   height: 100vh;
   position: relative;
-  border: 1px solid transparent;
 }
 
 .end-wrapper::after {
@@ -1389,7 +1390,6 @@ header {
   width: fit-content;
   height: fit-content;
   margin: 580px auto 0px auto;
-
 }
 
 
