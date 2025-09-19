@@ -35,6 +35,15 @@ $(function () {
   });
 });
 
+$('.view-btn').hover(
+  function() { // マウスが乗ったとき
+    $('.star-icon').addClass('hovered');
+  },
+  function() { // マウスが離れたとき
+    $('.star-icon').removeClass('hovered');
+  }
+);
+
 
 
   // スマホNAVオープンBTN ＋ジャンプ
