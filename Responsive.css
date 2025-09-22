@@ -17,8 +17,25 @@
 }
 
 @media (max-width: 600px) {
+
   .background-layer {
-    min-height: 100vh;
+    height: 100lvh;  /* UI が消えている状態の高さを基準 */
+  }
+
+  .shadow-layer {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100vw;
+    height: 100lvh;
+    transform: none;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.4) 15%,
+        rgba(0, 0, 0, 0.6) 20%,
+        rgba(0, 0, 0, 0.6) 80%,
+        rgba(0, 0, 0, 0.4) 85%,
+        rgba(0, 0, 0, 0) 100%);
   }
 
   p {
@@ -351,7 +368,7 @@
   }
 
   .making-wrapper {
-    height: 90vh;
+    min-height: 90svh;
     width: 100%;
     flex-direction: column-reverse;
     padding-top: 0px;
@@ -475,7 +492,7 @@
   .figma-btn-container {
     width: fit-content;
     margin: 0 auto;
-    padding-top: 0px;
+    padding-top: 200px;
     padding-bottom: 0px;
   }
 
@@ -500,7 +517,7 @@
 
   /* SP PROFILE セクション */
   .section-5 {
-    padding-top: 200px;
+    padding-top: 100px;
     padding-bottom: 100px;
   }
 
@@ -638,7 +655,6 @@
   }
 
   .contact-btn-container {
-
     bottom: 50%;
     transform: translateY(50%);
   }
@@ -648,9 +664,7 @@
   }
 
   #bg-onview p {
-
-    font-size: 0.9rem;
-
+    font-size: 1rem;
   }
 
   #bg-onview p::before {
@@ -659,12 +673,8 @@
     top: 55%;
     /* 少し下にずらす */
     left: 50%;
-    width: 300px;
+    width: 320px;
     height: 50px;
-    background: rgba(0, 0, 0, 1);
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
     filter: blur(15px);
   }
 

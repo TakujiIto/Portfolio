@@ -48,7 +48,7 @@ body {
   opacity: 0;
 }
 
-/*! 上部ナビ （位置固定）                  */
+/*上部ナビ*/
 header {
   position: fixed;
   z-index: 9000;
@@ -62,7 +62,6 @@ header {
   height: 70px;
   opacity: 0;
   animation: move-nav 1s ease forwards,
-    /* ヘッダー全共通 */
     fade-header 1s ease-in forwards;
   animation-delay: 2.4s;
 }
@@ -294,14 +293,7 @@ header {
   transition: opacity 0.4s;
 }
 
-/*! セクション   共通  ★★★                               */
-.section {
-  padding: 400px 0;
-}
-
-
-
-/*! シャドウレイヤー (wrapperに入ったら)*/
+/* シャドウレイヤー */
 .shadow-layer {
   position: fixed;
   top: 50%;
@@ -329,7 +321,13 @@ header {
   opacity: 1;
 }
 
-/* ファーストビュー★★★ */
+/* セクション共通 */
+.section {
+  padding: 400px 0;
+}
+
+
+/* ★★★ TOPセクション ★★★ */
 .section-1 {
   height: auto;
   position: relative;
@@ -348,7 +346,6 @@ header {
   animation: fade-fv 2s forwards;
   z-index: 10000;
   pointer-events: none;
-  /* この要素はマウスイベントを無視する */
 }
 
 @keyframes fade-fv {
@@ -472,7 +469,6 @@ header {
   }
 }
 
-
 /* タイポ背景 */
 .title-bg {
   width: 100%;
@@ -533,7 +529,7 @@ header {
   /* letter-spacingと同じ値をマイナス */
 }
 
-/*! ABOUT                    */
+/* ★★★ ABOUTセクション ★★★ */
 .about-wrapper {
   margin: 0 auto;
   width: 100%;
@@ -657,7 +653,6 @@ header {
   justify-content: end;
   height: fit-content;
   transition: all 0.8s;
-  padding-bottom: 200px;
 }
 
 
@@ -706,8 +701,6 @@ header {
 
 .site-thumbnails li {
   width: calc(50% - 10px);
-
-
 }
 
 .site-link img {
@@ -779,7 +772,7 @@ header {
   display: none;
 }
 
-/* MAKING ▼   //////////////////////////////////// */
+/* ★★★ MAKING セクション ★★★*/
 .making-wrapper {
   margin: 0 auto;
   width: 90%;
@@ -1159,10 +1152,11 @@ header {
 .profile-text span {
   opacity: 0;
   display: inline-block;
+  
 }
 
 .glow-text {
-  display: inline;
+  display: inline-block;
 }
 
 .glow-text .inner {
@@ -1425,18 +1419,19 @@ header {
   transition: all 0.4s;
 }
 
-#bg-onview.visible{
+#bg-onview.visible {
   opacity: 1;
 }
 
 
 #bg-onview p {
-   white-space: nowrap;
+  white-space: nowrap;
   position: relative;
   width: fit-content;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   color: #44f3ff;
-  text-shadow:0px 0px 6px #1AB5CC;
+  text-shadow: 0px 0px 6px #1AB5CC;
+  letter-spacing: 0.05rem;
 }
 
 #bg-onview p::before {
@@ -1447,7 +1442,7 @@ header {
   left: 50%;
   width: 500px;
   height: 60px;
-  background: rgba(0, 0, 0, 1);
+  background: rgba(0, 0, 0, 0.9);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
