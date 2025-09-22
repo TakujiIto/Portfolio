@@ -457,18 +457,18 @@
 
   /* 5枚目 */
   .slick-slide:nth-child(6) .slide-box img {
-    width: 60%;
-    margin-top: 15px;
+    width: 58%;
+
   }
 
   /* 6枚目 */
   .slick-slide:nth-child(7) .slide-box img {
-    width: 60%;
-    margin-top: 15px;
+    width: 58%;
+
   }
 
   .slide-box.stacked {
-    gap: 0px;
+    gap: 10px;
   }
 
   /* スライドボタン非表示 */
