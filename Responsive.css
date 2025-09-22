@@ -452,23 +452,23 @@
   /* 4枚目  サムネafter */
   .slick-slide:nth-child(5) .slide-box img {
     width: 75%;
-    margin-top: 10px;
+    margin-top: 20px;
   }
 
   /* 5枚目 */
   .slick-slide:nth-child(6) .slide-box img {
-    width: 58%;
+    width: 55%;
 
   }
 
   /* 6枚目 */
   .slick-slide:nth-child(7) .slide-box img {
-    width: 58%;
+    width: 55%;
 
   }
 
   .slide-box.stacked {
-    gap: 10px;
+    gap: 5px;
   }
 
   /* スライドボタン非表示 */
