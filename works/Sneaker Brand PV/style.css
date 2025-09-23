@@ -295,7 +295,7 @@ textarea {
 
 .fadein {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition: all 1s;
 }
 
@@ -316,28 +316,28 @@ footer {
     width: 100px;
   }
 
-.toggle_btn {
-  display: block;
-  position: fixed;
-  top: 12px;
-  right: 18px;
-  width: 30px;
-  height: 30px;
-  transition: all .5s;
-  cursor: pointer;
-  z-index: 20;
-}
+  .toggle_btn {
+    display: block;
+    position: fixed;
+    top: 12px;
+    right: 18px;
+    width: 30px;
+    height: 30px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 20;
+  }
 
-.toggle_btn span {
-  display: block;
-  position: absolute;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background-color: #333;
-  border-radius: 4px;
-  transition: all .5s;
-}
+  .toggle_btn span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all .5s;
+  }
 
   #header {
     width: 100%;
@@ -359,7 +359,6 @@ footer {
     max-height: 960px;
     object-fit: cover;
   }
-
 
   .slider-list li {
     padding: 20px;
@@ -405,7 +404,6 @@ footer {
   .item-content {
     padding: 10px 30px;
   }
-
 
   .contact-container {
     flex-direction: column;

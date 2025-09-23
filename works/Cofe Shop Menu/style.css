@@ -60,7 +60,7 @@ li {
 
 #header a {
   color: #fff;
-   margin: 20px;
+  margin: 20px;
   font-size: 1.4rem;
   text-shadow: 2px 2px 4px #000;
 }
@@ -124,8 +124,6 @@ li {
   font-size: 2.2rem;
   border-bottom: 4px solid crimson;
   margin-bottom: 40px;
-
-
 }
 
 .wrap-dl {
@@ -240,7 +238,8 @@ li {
 }
 
 .info p {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  line-height: 22px;
 }
 
 /*footer---------------------*/
@@ -248,11 +247,13 @@ li {
 #footer {
   display: flex;
   justify-content: space-between;
+  padding-top: 0px;
+  padding-bottom: 20px;
 }
 
 .copy {
   font-size: 0.75rem;
-  margin: auto;
+  margin:0 auto ;
 
 }
 
@@ -275,15 +276,14 @@ li {
   }
 
   #header ul {
-  padding: 20px 30px;
-}
+    padding: 20px 30px;
+  }
 
   #header a {
-  color: #fff;
+    color: #fff;
+    font-size: 1rem;
 
-  font-size: 1rem;
-
-}
+  }
 
   .flex {
     flex-direction: column;
@@ -299,7 +299,7 @@ li {
 
   .wrap-text {
     flex-direction: column;
- 
+
   }
 
   #about li {
@@ -314,7 +314,6 @@ li {
     background-position: center;
     background-size: cover;
     background-attachment: scroll;
-
   }
 
   .sec-title {
@@ -340,7 +339,6 @@ li {
   .wrap-dl {
     margin-bottom: 40px;
   }
-
 
   .wrap-text li {
     font-size: 0.9rem;
