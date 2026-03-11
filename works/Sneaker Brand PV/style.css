@@ -70,7 +70,7 @@ video {
 
 /* スライド余白 (li slick-slide)*/
 .slider-list .slick-slide {
-  padding: 30px;
+  padding: 0 30px 30px 30px;
 }
 
 /* スライド写真シャドウ */
