@@ -73,11 +73,6 @@ video {
   padding: 0 30px 30px 30px;
 }
 
-/* スライド写真シャドウ */
-.slider-list img {
-  box-shadow: grey 0px 0px 12px;
-  width: 100%;
-}
 
 /* ドット全体  間隔  位置調整*/
 .slick-dots li {
