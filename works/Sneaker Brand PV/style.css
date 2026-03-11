@@ -16,6 +16,7 @@ a {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -64,18 +65,40 @@ video {
 #pickup {
   width: 100%;
   padding: 100px 0 50px 0;
+
 }
 
-.slider-list {
-  overflow: hidden;
-  /*ないとはみ出る*/
-}
-
-.slider-list li {
+/* スライド余白 (li slick-slide)*/
+.slider-list .slick-slide {
   padding: 30px;
 }
 
-/*グリッド写真*/
+/* スライド写真シャドウ */
+.slider-list img {
+  box-shadow: grey 0px 0px 12px;
+  width: 100%;
+}
+
+/* ドット全体  間隔  位置調整*/
+.slick-dots li {
+  padding: 0 12px;
+  bottom: -5px;
+
+}
+
+/* ドットサイズ調整 */
+.slick-dots li button::before {
+  font-size: 12px;
+}
+
+/* アクティブなドット調整 */
+.slick-dots li.slick-active button::before {
+  font-size: 14px;
+  transition: font-size 0.2s ease;
+}
+
+
+/* !グリッド */
 #feature {
   margin: auto;
   max-width: 1240px;
@@ -360,31 +383,18 @@ footer {
     object-fit: cover;
   }
 
-  .slider-list li {
-    padding: 20px;
-  }
-
   .sec-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
-
     padding-bottom: 0px;
   }
 
 
-  #pickup {
-    width: 100%;
-    padding: 20px 0 0 0;
+
+  .slider-list .slick-slide {
+    padding: 30px 20px;
   }
 
-  .slider-list {
-    overflow: hidden;
-    /*ないとはみ出る*/
-  }
-
-  .slider-list li {
-    padding: 0px 20px;
-  }
 
   /*!グリッド写真           */
   #feature {

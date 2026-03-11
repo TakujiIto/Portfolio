@@ -5,18 +5,15 @@ $(function () {
     // ハンバーガーボタンにクラス付け外し
     $("#toggle-btn").toggleClass('active');
 
-    //クラスが付く時にnaviにもクラス付与させ。slideToggleで表示。
+    // btnにactiveが付いたらnaviをslideToggle(高さを元に戻す)。
     if ($("#toggle-btn").hasClass('active')) {
-      $('#navi').addClass('active');
       $('#navi').slideToggle(500);
     } else {
-      $('#navi').removeClass('active');
       $('#navi').slideUp(500);
     }
   }
 
-  // ハンバーガーボタンとページ内リンク、どちらを押した場合も上記の関数を呼び出す
-  // (リンクを押した時にactiveを外してナビメニューを閉じる)
+  // ボタンかリンクを押した時にactiveを外す
   $("#toggle-btn").on("click", function () {
     Toggle_Active();
   });
@@ -24,7 +21,7 @@ $(function () {
     Toggle_Active();
   });
 
- 
+
   //! ページ内ジャンプ                           
   //！『#から始まるa』のクリックイベント
   $('a[href^="#"]').click(function () {
@@ -37,13 +34,13 @@ $(function () {
     let id_position = target_id.offset().top;
 
     // ページトップからid-positionｍでスクロールアニメーション
-    $("html, body").animate({ scrollTop: id_position -80 }, 600, "swing");
+    $("html, body").animate({ scrollTop: id_position - 80 }, 600, "swing");
     return false;
   });
 
 
   //? 関数 heroZoom 
-  //?他スコープの 変数scrollPositionは引数で書けば受け取れる
+  //?他スコープの 変数scrollPositionは引数で受けとる
   function heroZoom(scrollPosition) {
     if (window.innerWidth > 900) {
       $("#hero img").css({ 'width': 100 / 3 + scrollPosition / 10 + '%' });
@@ -58,7 +55,7 @@ $(function () {
   $(window).scroll(function () {
 
     //現在のスクロール位置を定義
-    let scrollPosition = $(window).scrollTop();
+    let scrollTop = $(window).scrollTop();
     //ウィンドウ高さを定義
     let windowHeight = $(window).height();
     //各要素の位置を定義
@@ -67,7 +64,7 @@ $(function () {
     let contactTop = $("#contact").offset().top;
 
     //? スクロール時に関数heroZoomを実行
-    heroZoom(scrollPosition);
+    heroZoom(scrollTop);
 
     //?関数herozoom をwindowサイズ変更時に実行
     $(window).on('load resize', function () {
@@ -76,39 +73,38 @@ $(function () {
     });
 
     //? ロゴとトグルボタンの表示 
-    if (scrollPosition > 600) {
+    if (scrollTop > 600) {
       $(".logo, #toggle-btn").fadeIn(500);
     } else {
       $(".logo, #toggle-btn").fadeOut(500);
     }
 
     //? サイドボタンの表示 (gallerey ~ accessの間)
-    if (scrollPosition + windowHeight > accessTop) {
+    if (scrollTop + windowHeight > accessTop) {
       $("#side-btn").removeClass("show");
-    } else if (scrollPosition + windowHeight > galleryTop) {
+    } else if (scrollTop + windowHeight > galleryTop) {
       $("#side-btn").addClass("show");
     } else {
       $("#side-btn").removeClass("show");
     }
 
     //? 背景の表示
-    //条件①スクロール位置はcontactTopを越えたか？
-    if (scrollPosition + windowHeight > contactTop) {
-      //①が真ならフェードアウト
+    // スクロール位置がCONTACT ~ ACCESS間だけ表示
+    if (scrollTop + windowHeight > contactTop) {
       $(".bg").fadeOut(500);
-      //①が偽かつ、スクロールはaccessTopを越えているか？
-      //(つまり access ~ contact の間)
-    } else if (scrollPosition + windowHeight > accessTop) {
+      $("#position-date").removeClass("active");
+    } else if (scrollTop + windowHeight > accessTop) {
       $(".bg").fadeIn(500);
-      //どちらも偽の場合
+      $("#position-date").addClass("active");
     } else {
       $(".bg").fadeOut(500);
+      $("#position-date").removeClass("active");
     }
 
-
-    $('#scroll-position-date').text("scroll top = " + Math.floor(scrollPosition));
+    // スクロール数値計
+    $('#scroll-position-date').text("scroll top = " + Math.floor(scrollTop));
     $("#window-height-date").text("window height = " + windowHeight);
-    $("#now-position-date").text("scroll position = " + Math.floor(windowHeight + scrollPosition));
+    $("#now-position-date").text("scroll position = " + Math.floor(windowHeight + scrollTop));
     $('#content-position-date1').text('ACCESS = ' + Math.floor(accessTop));
     $('#content-position-date2').text("CONTACT = " + Math.floor(contactTop));
   });
@@ -119,7 +115,7 @@ $(function () {
     $(this).addClass("show");
   });
 
-   $(window).trigger('scroll');
+  $(window).trigger('scroll');
 
 
 });

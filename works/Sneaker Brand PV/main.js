@@ -4,12 +4,22 @@ $(function () {
   //!カルーセル用 jQueryプラグイン「slick」の設定
   $('.slider-list').slick({
 
+    // 自動再生
+    autoplay: true,
+    autoplaySpeed: 2000,
+    speed: 500,
+
+    // ホバーで止めない
+    pauseOnHover: true,
+
     //前後のスライドの表示
     centerMode: true,
     //centerModeで前後のスライドの表示幅
     centerPadding: '100px',
     //表示するスライド数（）
     slidesToShow: 3,
+
+    dots: true,
 
     //レスポンシブ 768px以下で1枚にする
     responsive: [
@@ -24,23 +34,23 @@ $(function () {
   });
 
 
-  
-  $('.toggle_btn').on('click', function() {
+
+  $('.toggle_btn').on('click', function () {
     $('#header').toggleClass('open');
   });
-  
+
   // #maskやリンクをクリックしたら必ず閉じる
-  $('#mask, .scroll-btn').on('click', function() {
+  $('#mask, .scroll-btn').on('click', function () {
     $('#header').removeClass('open');
   });
-  
 
 
-  $('a[href^="#"]').click(function(){
-    let href= $(this).attr("href");
+
+  $('a[href^="#"]').click(function () {
+    let href = $(this).attr("href");
     let target = $(href == "#" || href == "" ? 'html' : href);
     let position = target.offset().top;
-    $("html, body").animate( {scrollTop:position}, 600, "swing");
+    $("html, body").animate({ scrollTop: position }, 600, "swing");
     return false;
   });
 
