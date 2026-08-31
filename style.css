@@ -1,6 +1,5 @@
 html {
   font-size: 16px;
-
 }
 
 h2,
@@ -59,14 +58,14 @@ header {
 
 .nav-container {
   position: fixed;
-  right: -200px;
+  right: -180px;
   top: -10px;
   width: 940px;
   height: 70px;
   opacity: 0;
-  animation: move-nav 1s ease forwards,
-    fade-header 1s ease-in forwards;
-  animation-delay: 2.4s;
+  animation: move-nav 0.7s ease forwards,
+    fade-header 0.7s ease-in forwards;
+  animation-delay: 0.4s;
 }
 
 @keyframes move-nav {
@@ -75,7 +74,7 @@ header {
   }
 
   to {
-    right: -200px;
+    right: -180px;
   }
 }
 
@@ -93,15 +92,26 @@ header {
 .page-link {
   position: absolute;
   z-index: 1;
-  top: 25px;
-  left: 75px;
+}
+
+.pc-header .page-link {
+  top: 22px;
+  left: 90px;
+  display: flex;
+  align-items: center;
+  gap: 39px;
+  padding-right: 39px;
 }
 
 .page-link a {
   font-size: 1.2rem;
-  margin: 0 22px;
   color: white;
   padding: 5px 0px;
+}
+
+.pc-header .page-link a {
+  margin: 0;
+  white-space: nowrap;
 }
 
 .page-link a:hover {
@@ -149,10 +159,10 @@ header {
   bottom: -10px;
   left: -60px;
   opacity: 0;
-  animation: move-sub-nav 1s ease forwards,
+  animation: move-sub-nav 0.7s ease forwards,
     /* ヘッダー全共通 */
-    fade-header 1s ease-in forwards;
-  animation-delay: 2.4s;
+    fade-header 0.7s ease-in forwards;
+  animation-delay: 0.4s;
 }
 
 @keyframes move-sub-nav {
@@ -160,7 +170,7 @@ header {
     left: -200px;
   }
 
-  tos {
+  to {
     left: -60px;
   }
 }
@@ -215,10 +225,10 @@ header {
   right: 10px;
   width: 130px;
   height: 50px;
-  animation: move-view-icon 1s ease forwards,
+  animation: move-view-icon 0.7s ease forwards,
     /* ヘッダー全共通 */
-    fade-header 1s ease-in forwards;
-  animation-delay: 2.4s;
+    fade-header 0.7s ease-in forwards;
+  animation-delay: 0.4s;
   opacity: 0;
 }
 
@@ -346,7 +356,7 @@ header {
   top: 0;
   left: 0;
   background-color: white;
-  animation: fade-fv 2s forwards;
+  animation: fade-fv 1.3s forwards;
   z-index: 10000;
   pointer-events: none;
 }
@@ -373,7 +383,7 @@ header {
   max-width: 700px;
   padding: 0px 20px;
   height: fit-content;
-  margin: 240px auto 0px auto;
+  margin: 260px auto 0px auto;
 
 }
 
@@ -381,9 +391,9 @@ header {
 .main-title {
   position: relative;
   opacity: 0;
-  animation: fade-title-opacity 1s ease-in forwards,
-    fade-title-translate 1s ease-out forwards;
-  animation-delay: 1.2s;
+  animation: fade-title-opacity 0.7s ease-in forwards,
+    fade-title-translate 0.7s ease-out forwards;
+  animation-delay: 0.8s;
 
 }
 
@@ -399,7 +409,7 @@ header {
 
 @keyframes fade-title-translate {
   from {
-    transform: translateY(80px);
+    transform: translateY(45px);
   }
 
   to {
@@ -416,8 +426,8 @@ header {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: title-glow 2s ease-out forwards;
-  animation-delay: 3.4s;
+  animation: title-glow 1.2s ease-out forwards;
+  animation-delay: 1.55s;
 }
 
 @keyframes title-glow {
@@ -428,7 +438,7 @@ header {
 
   50% {
     fill: #73f4fd;
-    filter: drop-shadow(0px 0px 8px #1AB5CC) drop-shadow(0px 0px 12px #1AB5CC) drop-shadow(0px 0px 18px #1AB5CC);
+    filter: drop-shadow(0px 0px 6px #1AB5CC) drop-shadow(0px 0px 9px #1AB5CC) drop-shadow(0px 0px 14px #1AB5CC);
   }
 
   100% {
@@ -452,8 +462,8 @@ header {
   background-repeat: repeat;
   background-size: 120%;
   background-position: 0px 40px;
-  animation: fadeFlash 2.2s ease-out forwards;
-  animation-delay: 3.4s;
+  animation: fadeFlash 1.2s ease-out forwards;
+  animation-delay: 1.55s;
   opacity: 0.8;
 }
 
@@ -476,15 +486,16 @@ header {
 .title-bg {
   width: 100%;
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
+  opacity: 0.9;
 }
 
 /* サブタイトル */
 .sub-title {
-  margin: 0 auto;
+  margin: -5px auto 0px;
   width: fit-content;
   text-align: center;
   font-size: 1.6rem;
@@ -497,10 +508,12 @@ header {
     0px 0px 14px #000;
   white-space: nowrap;
   opacity: 0;
-  animation: subtitle-fade 1s ease-in forwards,
-    subtitle-move 1s ease-out forwards;
-  animation-delay: 1.8s;
+  animation: subtitle-fade 0.6s ease-in forwards,
+    subtitle-move 0.6s ease-out forwards;
+  animation-delay: 0.9s;
 }
+
+
 
 .sub-title span {
   letter-spacing: 0;
@@ -518,7 +531,7 @@ header {
 
 @keyframes subtitle-move {
   from {
-    transform: translateY(50px);
+    transform: translateY(30px);
   }
 
   to {
@@ -581,7 +594,7 @@ header {
   width: 100%;
   margin-bottom: 100px;
   transform: translateX(500px);
-  transition: all 1s;
+  transition: all 0.7s;
 }
 
 .fade .about-inner {
@@ -596,7 +609,7 @@ header {
   width: 0;
   height: 60px;
   border-bottom: 1.75px solid white;
-  transition: all 0.3s linear 0.8s;
+  transition: all 0.25s linear 0.55s;
 }
 
 .draw .about-line {
@@ -605,7 +618,7 @@ header {
 
 /* SVGアウトライン（アニメ３）*/
 .draw .outline-anime {
-  animation: draw-outline 1.6s ease-out 1.1s forwards;
+  animation: draw-outline 1.2s ease-out 0.8s forwards;
 }
 
 @keyframes draw-outline {
@@ -1140,7 +1153,7 @@ header {
   border-bottom: 1px solid white;
   margin-bottom: 14px;
   width: 0%;
-  transition: all ease-out 0.8s;
+  transition: width 0.55s ease-out;
 }
 
 #name-border.fade {
@@ -1214,7 +1227,7 @@ header {
 .skill-type-color {
   fill: rgb(212, 212, 212);
   filter: none;
-  transition: all 0.4s 1.4s;
+  transition: all 0.4s 0.6s;
 }
 
 .inview .skill-type-color {
@@ -1280,7 +1293,7 @@ header {
   stroke-dashoffset: 210;
   filter:
     drop-shadow(0px 0px 4px #1AB5CC);
-  transition: all 0.3s linear 2s;
+  transition: stroke-dashoffset 0.2s linear 0.7s;
 }
 
 .inview .skill-border-animete {
@@ -1314,7 +1327,7 @@ header {
   stroke-width: 2;
   stroke-dasharray: 400;
   stroke-dashoffset: 400;
-  animation: draw-outline 0.6s linear forwards;
+  animation: draw-outline 0.3s linear forwards;
   filter: drop-shadow(0px 0px 4px #44f3ff);
 }
 
@@ -1327,28 +1340,28 @@ header {
 
 /* サブアイコンの枠とテキスト発光 */
 .inview .glow1 {
-  animation-delay: 2.3s;
+  animation-delay: 0.9s;
 }
 
 .inview .glow2 {
-  animation-delay: 2.8s;
+  animation-delay: 1.18s;
 }
 
 .inview .glow3 {
-  animation-delay: 3.3s;
+  animation-delay: 1.46s;
 }
 
 /* サブテキスト 発光 遅延 */
 .text1 {
-  transition: all ease 0.6s 2.3s;
+  transition: all 0.3s ease 0.9s;
 }
 
 .text2 {
-  transition: all ease 0.6s 2.8s;
+  transition: all 0.3s ease 1.18s;
 }
 
 .text3 {
-  transition: all ease 0.6s 3.3s;
+  transition: all 0.3s ease 1.46s;
 }
 
 /* ENDセクション ★★★★★ */
@@ -1400,14 +1413,7 @@ header {
 #canvas-container {
   z-index: 1;
   position: fixed;
-  opacity: 0;
-  transition: all 1s;
-  pointer-events: none
-}
-
-#canvas-container.visible {
-  opacity: 1;
-  pointer-events: none
+  pointer-events: none;
 }
 
 #bg-onview {

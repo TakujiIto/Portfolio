@@ -1,10 +1,8 @@
 $(function () {
 
-
   // 背景切替設定
   let sectionImage = $('.section').first().data('bg');
   let currentLayer = 1;
-
   $('#background-layer-' + currentLayer)
     .css('background-image', 'url(' + sectionImage + ')')
     .css('opacity', 1);
@@ -19,49 +17,42 @@ $(function () {
     currentLayer = layerNumber;
   }
 
-
   // ビューボタンで全画面非表示
- $('.view-btn, .sp-view-btn').on('click', function (e) {
-  e.stopPropagation();
+  $('.view-btn, .sp-view-btn').on('click', function (e) {
+    e.stopPropagation();
 
-  // ヘッダー・メイン・フッター非表示
-  $('#header, #main, #footer').addClass('overlay-hidden');
-  $('#bg-onview').addClass('visible');
+    // ヘッダー・メイン・フッター非表示
+    $('#header, #main, #footer').addClass('overlay-hidden');
+    $('#bg-onview').addClass('visible');
 
-  // どこかクリックされたら元に戻す
-  $(document).one('click', function () {
-    $('#header, #main, #footer').removeClass('overlay-hidden');
-    $('#bg-onview').removeClass('visible');
+    // どこかクリックされたら元に戻す
+    $(document).one('click', function () {
+      $('#header, #main, #footer').removeClass('overlay-hidden');
+      $('#bg-onview').removeClass('visible');
+    });
   });
-});
 
-$('.view-btn').hover(
-  function() { // マウスが乗ったとき
-    $('.star-icon').addClass('hovered');
-  },
-  function() { // マウスが離れたとき
-    $('.star-icon').removeClass('hovered');
-  }
-);
-
-
+  $('.view-btn').hover(
+    function () { // マウスが乗ったとき
+      $('.star-icon').addClass('hovered');
+    },
+    function () { // マウスが離れたとき
+      $('.star-icon').removeClass('hovered');
+    }
+  );
 
   // スマホNAVオープンBTN ＋ジャンプ
   $('#sp-nav-btn').on('click', function () {
-    $(this).toggleClass('open');       
-    $('.sp-nav').toggleClass('open'); 
+    $(this).toggleClass('open');
+    $('.sp-nav').toggleClass('open');
   });
   $('a[href^="#"]').on('click', function () {
     $('#nav-btn').removeClass('open');
     $('.sp-nav').removeClass('open');
   });
 
-  
 
-
-
-  // !▼▼▼▼▼  スクロール ▼▼▼▼▼     
-
+  // ▼▼▼ スクロールイベント ▼▼▼▼     
   $(window).on('scroll resize', function () {
     const scrollTop = $(window).scrollTop();
     const windowHeight = $(window).height();
@@ -73,7 +64,6 @@ $('.view-btn').hover(
     //下から200px
     const scrollBottom200 = scrollTop + windowHeight - 200;
 
-
     // 背景切替
     $('.section').each(function (i) {
       const sectionTop = $(this).offset().top;
@@ -84,7 +74,6 @@ $('.view-btn').hover(
       }
     });
 
-
     // セクション名切替
     let currentTitle = '';
     $('.section').each(function () {
@@ -92,7 +81,7 @@ $('.view-btn').hover(
       const sectionTop = $section.offset().top;
       const sectionHeight = $section.outerHeight();
 
-      if (scrollBottom200 > sectionTop && scrollBottom200  < sectionTop + sectionHeight) {
+      if (scrollBottom200 > sectionTop && scrollBottom200 < sectionTop + sectionHeight) {
         currentTitle = $section.data('title');
       }
     });
@@ -102,7 +91,6 @@ $('.view-btn').hover(
         $(this).text(currentTitle).fadeIn(400);
       });
     }
-
 
     // シャドウレイヤー切替
     const startSection = $('.section-2');
@@ -116,15 +104,13 @@ $('.view-btn').hover(
       $('.shadow-layer').toggleClass('view', shouldAddClass);
     }
 
-
-    // ABOUTアニメーション
+    // ABOUTフェードイン
     $('.about-box, .sp-about-box').each(function () {
       const elementTop = $(this).offset().top;
       if (elementTop < scrollBottom200) {
         $(this).addClass('fade draw');
       }
     });
-
 
     // WORKテキスト登場
     $('.work-wrapper:visible').each(function () {
@@ -142,7 +128,6 @@ $('.view-btn').hover(
       }
     });
 
-
     // スキルアイコンアニメーション
     $('.skill-container').each(function () {
       const elementTop = $(this).offset().top;
@@ -151,15 +136,9 @@ $('.view-btn').hover(
       }
     });
 
-    // フッター関連
-    const containerTop = $('.end-wrapper').offset().top;
-    if (containerTop < scrollTop200) {
-      $('#canvas-container, .contact-btn').addClass('visible');
-    } else {
-      $('#canvas-container, .contact-btn').removeClass('visible');
-    }
   });
-  // !▲▲▲▲ スクロール関数ここまで ▲▲▲▲   
+
+  // ▲▲▲スクロールイベント▲▲▲   
 
 
   //WORKセクション テキスト&画像切替
@@ -202,7 +181,6 @@ $('.view-btn').hover(
     fadeSwitch($('.site-title'), originalTitle);
     fadeSwitch($('.site-text'), originalText, true);
   });
-
 
 
   //スライド用スクリプト★★★
@@ -249,14 +227,12 @@ $('.view-btn').hover(
     });
 
 
-
     // スライドボタン
     $('.next-btn').on('click', function () {
       $('.slider').slick('slickNext');
     });
 
-
-    // パスにホバー時、スライドボタンのテキストを光らせる
+    // パスにホバー時、ボタンを光らせる
     $('.next-btn').on('mouseenter touchstart', function () {
       $(this).closest('.btn-container').addClass('hovered')
         .find('.btn-text').addClass('hovered');
@@ -267,7 +243,6 @@ $('.view-btn').hover(
 
 
   });
-
 
 
   // プロフィール名前 フェード ---
@@ -300,7 +275,6 @@ $('.view-btn').hover(
     });
   }
 
-
   // プロフィール文章アニメーション
   let animated = false;
   $(window).on('scroll', function () {
@@ -315,7 +289,7 @@ $('.view-btn').hover(
       // glow-textの表示後に時間差でactiveをつける
       setTimeout(function () {
         $('.glow-text').addClass('active');
-      }, 3800); // 表示完了から4000ms後に光らせる
+      }, 2800); // 説明文の表示に合わせて強調部分を光らせる
     }
   });
 
@@ -344,24 +318,24 @@ $('.view-btn').hover(
     const $allSpans = $target.find('span');
     $allSpans.each(function (i) {
       $(this)
-        .delay(i * 5 + 1000)
+        .delay(i * 5 + 700)
         .animate({ opacity: 1 }, 100);
     });
   }
 
   $(window).trigger('scroll');
-
-
 });
 
 
 
-
-
-
-
+// パーティクル ★★★
 (() => {
   const container = document.getElementById('canvas-container');
+  const contactSection = document.querySelector('.section-6');
+  const contactTrigger = document.querySelector('.contact-btn-container');
+  const FADE_DURATION = 600;
+
+  if (!container || !contactSection || !contactTrigger) return;
 
   const scene = new THREE.Scene();
 
@@ -437,8 +411,9 @@ $('.view-btn').hover(
     varying float vOpacity;
     varying vec3 vColor;
     uniform float time;
+    uniform float globalOpacity;
     void main() {
-      vOpacity = baseOpacity * (0.8 + 0.2 * sin(time + opacityOffset));
+      vOpacity = baseOpacity * (0.8 + 0.2 * sin(time + opacityOffset)) * globalOpacity;
       vColor = color;
       gl_PointSize = size;
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
@@ -462,14 +437,31 @@ $('.view-btn').hover(
     transparent: true,
     depthWrite: false,
     blending: THREE.AdditiveBlending,
-    uniforms: { time: { value: 0 } }
+    uniforms: {
+      time: { value: 0 },
+      globalOpacity: { value: 0 }
+    }
   });
 
   const points = new THREE.Points(geometry, material);
   scene.add(points);
 
+  let animationFrameId = null;
+  let lastFrameTime = null;
+  let currentOpacity = 0;
+  let targetOpacity = 0;
+
   function animate(time) {
-    requestAnimationFrame(animate);
+    const deltaTime = lastFrameTime === null ? 0 : time - lastFrameTime;
+    lastFrameTime = time;
+
+    if (currentOpacity !== targetOpacity) {
+      const fadeStep = deltaTime / FADE_DURATION;
+      currentOpacity = targetOpacity > currentOpacity
+        ? Math.min(targetOpacity, currentOpacity + fadeStep)
+        : Math.max(targetOpacity, currentOpacity - fadeStep);
+      material.uniforms.globalOpacity.value = currentOpacity;
+    }
 
     for (let i = 0; i < particlesCount; i++) {
       geometry.attributes.position.array[i * 3] += velocities[i].x;
@@ -486,9 +478,41 @@ $('.view-btn').hover(
     material.uniforms.time.value = time * 0.001;
 
     renderer.render(scene, camera);
+
+    if (targetOpacity === 0 && currentOpacity === 0) {
+      renderer.clear();
+      animationFrameId = null;
+      lastFrameTime = null;
+      return;
+    }
+
+    animationFrameId = requestAnimationFrame(animate);
   }
 
-  animate();
+  function setParticlesActive(shouldActivate) {
+    const nextOpacity = shouldActivate ? 1 : 0;
+    if (targetOpacity === nextOpacity) return;
+
+    targetOpacity = nextOpacity;
+
+    if (animationFrameId === null) {
+      lastFrameTime = null;
+      animationFrameId = requestAnimationFrame(animate);
+    }
+  }
+
+  function updateParticleState() {
+    const triggerTop = contactTrigger.getBoundingClientRect().top + window.scrollY;
+    const sectionTop = contactSection.getBoundingClientRect().top + window.scrollY;
+    const sectionBottom = sectionTop + contactSection.offsetHeight;
+    const triggerLine = window.scrollY + window.innerHeight - 200;
+    const isContactActive = triggerLine >= triggerTop && triggerLine <= sectionBottom;
+
+    setParticlesActive(isContactActive);
+  }
+
+  window.addEventListener('scroll', updateParticleState, { passive: true });
+  window.addEventListener('load', updateParticleState);
 
   window.addEventListener('resize', () => {
     viewWidth = window.innerWidth <= 600 ? 600 : window.innerWidth;
@@ -504,10 +528,13 @@ $('.view-btn').hover(
     renderer.setSize(window.innerWidth, window.innerHeight);
 
     // 粒子を再初期化
-    scene.remove(points);
+    geometry.dispose();
     ({ geometry, velocities } = initializeParticles(particlesCount));
     points.geometry = geometry;
-    scene.add(points);
+
+    updateParticleState();
   });
+
+  updateParticleState();
 
 })();

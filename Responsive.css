@@ -594,14 +594,14 @@
   }
 
   .skill-type-color {
-    transition: all 0.4s 1.2s;
+    transition: all 0.4s 0.6s;
   }
 
   .inview .glow-top,
   .inview .glow-bottom {
     stroke-dasharray: none;
     stroke-dashoffset: 0;
-    animation: fade-outline 0.6s ease forwards;
+    animation: fade-outline 0.3s ease forwards;
     opacity: 0;
   }
 
@@ -616,27 +616,27 @@
   }
 
   .inview .glow1 {
-    animation-delay: 1.4s;
+    animation-delay: 1s;
   }
 
   .inview .glow2 {
-    animation-delay: 1.6s;
+    animation-delay: 1.2s;
   }
 
   .inview .glow3 {
-    animation-delay: 1.8s;
+    animation-delay: 1.4s;
   }
 
   .text1 {
-    transition: all ease 0.6s 1.4s;
+    transition: all 0.3s ease 1s;
   }
 
   .text2 {
-    transition: all ease 0.6s 1.6s;
+    transition: all 0.3s ease 1.2s;
   }
 
   .text3 {
-    transition: all ease 0.6s 1.8s;
+    transition: all 0.3s ease 1.4s;
   }
 
   .skill-border {
