@@ -129,13 +129,13 @@
 
   /* スマホナビメニュー文字 */
   #sp-link {
-    top: 130px;
+    top: 120px;
     left: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 28px;
+    gap: 30px;
     text-align: center;
 
   }

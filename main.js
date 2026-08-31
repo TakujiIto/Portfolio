@@ -53,7 +53,10 @@ $(function () {
 
 
   // ▼▼▼ スクロールイベント ▼▼▼▼     
-  $(window).on('scroll resize', function () {
+  let viewportUpdatePending = false;
+  const $sections = $('.section');
+
+  function updateViewportState() {
     const scrollTop = $(window).scrollTop();
     const windowHeight = $(window).height();
 
@@ -65,26 +68,17 @@ $(function () {
     const scrollBottom200 = scrollTop + windowHeight - 200;
 
     // 背景切替
-    $('.section').each(function (i) {
+    let activeSectionIndex = 0;
+    $sections.each(function (i) {
       const sectionTop = $(this).offset().top;
       if (scrollBottom200 >= sectionTop) {
-        const newBackgroundImage = $(this).data('bg');
-        const layerNumber = i + 1;
-        changeBG(newBackgroundImage, layerNumber);
+        activeSectionIndex = i;
       }
     });
 
-    // セクション名切替
-    let currentTitle = '';
-    $('.section').each(function () {
-      const $section = $(this);
-      const sectionTop = $section.offset().top;
-      const sectionHeight = $section.outerHeight();
-
-      if (scrollBottom200 > sectionTop && scrollBottom200 < sectionTop + sectionHeight) {
-        currentTitle = $section.data('title');
-      }
-    });
+    const $activeSection = $sections.eq(activeSectionIndex);
+    const currentTitle = $activeSection.data('title');
+    changeBG($activeSection.data('bg'), activeSectionIndex + 1);
 
     if (currentTitle && $('.sec-title:visible').text() !== currentTitle) {
       $('.sec-title:visible').fadeOut(100, function () {
@@ -105,7 +99,7 @@ $(function () {
     }
 
     // ABOUTフェードイン
-    $('.about-box, .sp-about-box').each(function () {
+    $('.about-box:not(.fade), .sp-about-box:not(.fade)').each(function () {
       const elementTop = $(this).offset().top;
       if (elementTop < scrollBottom200) {
         $(this).addClass('fade draw');
@@ -129,14 +123,26 @@ $(function () {
     });
 
     // スキルアイコンアニメーション
-    $('.skill-container').each(function () {
+    $('.skill-container:not(.inview)').each(function () {
       const elementTop = $(this).offset().top;
       if (elementTop < scrollBottom200) {
         $(this).addClass('inview');
       }
     });
 
-  });
+  }
+
+  function requestViewportUpdate() {
+    if (viewportUpdatePending) return;
+
+    viewportUpdatePending = true;
+    requestAnimationFrame(function () {
+      updateViewportState();
+      viewportUpdatePending = false;
+    });
+  }
+
+  $(window).on('scroll resize', requestViewportUpdate);
 
   // ▲▲▲スクロールイベント▲▲▲   
 
@@ -323,7 +329,7 @@ $(function () {
     });
   }
 
-  $(window).trigger('scroll');
+  requestViewportUpdate();
 });
 
 
@@ -337,7 +343,19 @@ $(function () {
 
   if (!container || !contactSection || !contactTrigger) return;
 
-  const scene = new THREE.Scene();
+  let particleSystem = null;
+
+  function isParticleTriggerActive() {
+    const triggerTop = contactTrigger.getBoundingClientRect().top + window.scrollY;
+    const sectionTop = contactSection.getBoundingClientRect().top + window.scrollY;
+    const sectionBottom = sectionTop + contactSection.offsetHeight;
+    const triggerLine = window.scrollY + window.innerHeight - 200;
+
+    return triggerLine >= triggerTop && triggerLine <= sectionBottom;
+  }
+
+  function initializeParticleSystem() {
+    const scene = new THREE.Scene();
 
   // 初期画面サイズとカメラ設定
   let viewWidth = window.innerWidth;
@@ -501,19 +519,6 @@ $(function () {
     }
   }
 
-  function updateParticleState() {
-    const triggerTop = contactTrigger.getBoundingClientRect().top + window.scrollY;
-    const sectionTop = contactSection.getBoundingClientRect().top + window.scrollY;
-    const sectionBottom = sectionTop + contactSection.offsetHeight;
-    const triggerLine = window.scrollY + window.innerHeight - 200;
-    const isContactActive = triggerLine >= triggerTop && triggerLine <= sectionBottom;
-
-    setParticlesActive(isContactActive);
-  }
-
-  window.addEventListener('scroll', updateParticleState, { passive: true });
-  window.addEventListener('load', updateParticleState);
-
   window.addEventListener('resize', () => {
     viewWidth = window.innerWidth <= 600 ? 600 : window.innerWidth;
     viewHeight = window.innerHeight;
@@ -532,8 +537,36 @@ $(function () {
     ({ geometry, velocities } = initializeParticles(particlesCount));
     points.geometry = geometry;
 
-    updateParticleState();
+    setParticlesActive(isParticleTriggerActive());
   });
+
+    return { setActive: setParticlesActive };
+  }
+
+  let particleTriggerUpdatePending = false;
+
+  function updateParticleState() {
+    if (particleTriggerUpdatePending) return;
+
+    particleTriggerUpdatePending = true;
+    requestAnimationFrame(() => {
+      const shouldActivate = isParticleTriggerActive();
+
+      if (shouldActivate && particleSystem === null) {
+        particleSystem = initializeParticleSystem();
+      }
+
+      if (particleSystem !== null) {
+        particleSystem.setActive(shouldActivate);
+      }
+
+      particleTriggerUpdatePending = false;
+    });
+  }
+
+  window.addEventListener('scroll', updateParticleState, { passive: true });
+  window.addEventListener('resize', updateParticleState);
+  window.addEventListener('load', updateParticleState);
 
   updateParticleState();
 
